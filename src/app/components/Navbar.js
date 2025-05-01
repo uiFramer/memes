@@ -21,11 +21,11 @@ export default function Navbar() {
   }, [isDarkMode])
 
   const navItems = [
-    { href: '/', icon: Home, label: 'Home' },
-    { href: '/explorer', icon: Search, label: 'Explorer' },
-    { href: '/upload', icon: Upload, label: 'Upload' },
-    { href: '/leaderboard', icon: Trophy, label: 'Leaderboard' },
-    { href: '/profile', icon: User, label: 'Profile' },
+    { href: '/', icon: Home, label: 'Ev' },
+    { href: '/explorer', icon: Search, label: 'Keşfet' },
+    { href: '/upload', icon: Upload, label: 'Yükle' },
+    { href: '/leaderboard', icon: Trophy, label: 'Lider Tablosu' },
+    { href: '/profile', icon: User, label: 'Profil' },
   ]
 
   return (
@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-primary">MemeVerse</span>
+            <span className="text-2xl font-bold text-primary">MemesTR</span>
           </Link>
 
           {/* Desktop Navigation */}
