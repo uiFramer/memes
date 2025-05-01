@@ -48,9 +48,9 @@ export default function MemeCard({ meme }) {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={handleLike}
-            className={`like-button ${isLiked ? 'liked' : ''}`}
+            className={`like-button ${isLiked ? 'liked' : 'Beğendim'}`}
           >
-            <Heart className={isLiked ? 'fill-current' : ''} size={20} />
+            <Heart className={isLiked ? 'fill-current' : 'Beğendim'} size={20} />
             <span>Beğen</span>
           </motion.button>
 
