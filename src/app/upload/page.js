@@ -174,7 +174,7 @@ export default function Upload() {
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors disabled:opacity-50 h-min"
             >
               <Wand2 size={20} />
-              <span>{isGenerating ? 'Oluşturuluyor...' : 'AI Caption'}</span>
+              <span>{isGenerating ? 'Generating...' : 'AI Caption'}</span>
             </button>
           </div>
 
@@ -184,7 +184,7 @@ export default function Upload() {
             className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors disabled:opacity-75"
           >
             <UploadIcon size={20} />
-            <span>{isUploading ? 'Yükleniyor...' : 'Yükle'}</span>
+            <span>{isUploading ? 'Uploading...' : 'Yükle'}</span>
           </button>
         </div>
       </div>
