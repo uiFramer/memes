@@ -38,7 +38,7 @@ export default function Home() {
         className="text-center"
       >
         <h1 className="text-4xl font-bold mb-4 dark:text-white">
-          Türk Meme Topluluğu 🇹🇷
+          Turkish Meme Community
         </h1>
         <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
           İnternetteki en iyi mimler için tek adresiniz. Harika topluluğumuzla mimlere bir göz atın, oluşturun ve paylaşın!
