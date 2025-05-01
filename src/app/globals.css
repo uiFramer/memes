@@ -67,7 +67,7 @@
 }
 
 .like-button {
-  @apply flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white transition-all duration-300 hover:bg-primary/90;
+  @apply flex items-center gap-2 px-4 py-2 rounded-full bg-light text-secondary transition-all duration-300 hover:bg-primary/90;
 }
 
 .like-button.liked {
