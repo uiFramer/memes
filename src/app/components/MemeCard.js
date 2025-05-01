@@ -51,7 +51,7 @@ export default function MemeCard({ meme }) {
             className={`like-button ${isLiked ? 'liked' : ''}`}
           >
             <Heart className={isLiked ? 'fill-current' : ''} size={20} />
-            <span>Sevdim</span>
+            <span></span>
           </motion.button>
 
           <div className="flex space-x-4">
