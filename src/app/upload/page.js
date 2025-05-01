@@ -38,7 +38,7 @@ export default function Upload() {
       reader.onload = (e) => setSelectedImage(e.target.result)
       reader.readAsDataURL(file)
     } else {
-      toast.error('Please upload an image file (JPG, PNG, GIF)')
+      toast.error('Lütfen bir resim dosyası yükleyin (JPG, PNG, GIF)')
     }
   }
 
@@ -49,16 +49,7 @@ export default function Upload() {
       // Simulated API call
       await new Promise(resolve => setTimeout(resolve, 1000))
       const captions = [
-       "When the junior dev says 'It works on my machine'...",
-        "Me, deploying on a Friday afternoon...",
-        "When the bug disappears after adding a console.log()",
-        "Senior dev: 'Don’t push directly to main!' Me: git push origin main",
-        "When you Google an error and the only result is your own Stack Overflow question",
-        "Me, after fixing a bug I don't understand...",
-        "That moment when you forget a semicolon and break everything",
-        "Deploying to production like: 'Please don’t break... please don’t break...'",
-        "When you see a 10-year-old JavaScript tutorial still being used in 2025",
-        "Code review feedback: 'This works, but... why?'",
+       "Birden karşıma sen çıkınca ben: '😳'"
       ]
       setCaption(captions[Math.floor(Math.random() * captions.length)])
     } finally {
@@ -69,7 +60,7 @@ export default function Upload() {
   // Image upload to ImgBB
   const handleUpload = async () => {
     if (!selectedFile) {
-      toast.error('Please select an image')
+      toast.error('Lütfen bir resim seçin!')
       return
     }
 
@@ -86,22 +77,22 @@ export default function Upload() {
       )
 
       const data = await response.json()
-      if (!data.success) throw new Error('Upload failed')
+      if (!data.success) throw new Error('Yükleme başarısız')
 
       dispatch(addUserMeme({
         id: Date.now().toString(),
-        name: caption || 'My awesome meme',
+        name: caption || 'Benim mimim!',
         url: data.data.url,
         width: data.data.width,
         height: data.data.height,
       }))
 
-      toast.success('Meme uploaded successfully!')
+      toast.success('Resim başarıyla yüklendi!')
       setSelectedImage(null)
       setSelectedFile(null)
       setCaption('')
     } catch (error) {
-      toast.error('Upload failed: ' + (error.message || 'Please try again'))
+      toast.error('Yükleme başarısız: ' + (error.message || 'Tekrar deneyin!'))
     } finally {
       setIsUploading(false)
     }
@@ -111,10 +102,10 @@ export default function Upload() {
     <div className="max-w-2xl mx-auto space-y-8">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
         <h1 className="text-3xl font-bold text-center mb-4 dark:text-white">
-          Upload Your Meme
+          Resim yükle!
         </h1>
         <p className="text-gray-600 dark:text-gray-300 text-center">
-          Share your humor with the world! Upload your meme and add a funny caption.
+          Bu platforma kendi miminizi paylaşarak iz bırakın!
         </p>
       </motion.div>
 
@@ -143,7 +134,7 @@ export default function Upload() {
                 }}
                 className="text-red-500 hover:text-red-600 text-sm"
               >
-                Remove Image
+                Resmi Kaldır
               </button>
             </div>
           ) : (
@@ -151,10 +142,10 @@ export default function Upload() {
               <ImageIcon className="h-12 w-12 mx-auto text-gray-400" />
               <div className="space-y-2">
                 <p className="text-gray-600 dark:text-gray-300">
-                  Drag and drop your meme here, or click to select
+                  Resminizi buraya sürükleyin veya seçmek için tıklayın.
                 </p>
                 <p className="text-sm text-gray-500">
-                  Supported formats: JPG, PNG, GIF (Max 5MB)
+                  Desteklenen format: JPG, PNG, GIF (Max 5MB)
                 </p>
               </div>
               <input
@@ -173,7 +164,7 @@ export default function Upload() {
             <textarea
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
-              placeholder="Add a funny caption..."
+              placeholder="Açıklama yaz..."
               rows="1"
               className="flex-1 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary resize-none"
             />
@@ -183,7 +174,7 @@ export default function Upload() {
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors disabled:opacity-50 h-min"
             >
               <Wand2 size={20} />
-              <span>{isGenerating ? 'Generating...' : 'AI Caption'}</span>
+              <span>{isGenerating ? 'Oluşturuluyor...' : 'AI Caption'}</span>
             </button>
           </div>
 
@@ -193,7 +184,7 @@ export default function Upload() {
             className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors disabled:opacity-75"
           >
             <UploadIcon size={20} />
-            <span>{isUploading ? 'Uploading...' : 'Upload Meme'}</span>
+            <span>{isUploading ? 'Yükleniyor...' : 'Yükle'}</span>
           </button>
         </div>
       </div>
