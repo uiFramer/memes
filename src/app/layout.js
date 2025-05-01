@@ -7,12 +7,12 @@ import { Toaster } from 'sonner'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'MemesTR',
+  title: 'Memestr',
   description: 'Türk meme topluluğu.',
   keywords: 'memes, komik, mizah, meme şablonları, trending, meme paylaş, internet kültürü',
-  author: 'MemesTR',
+  author: 'Memestr',
   openGraph: {
-    title: 'MemesTR',
+    title: 'Memestr',
     description: 'Türk meme topluluğu.',
     url: 'https://memestr.netlify.app',
     type: 'website',
@@ -21,14 +21,14 @@ export const metadata = {
         url: 'https://www.memeverse.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'MemesTR',
+        alt: 'Memestr',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@memestr',
-    title: 'MemesTR',
+    title: 'Memestr',
     description: 'Türk meme topluluğu.',
     image: 'https://www.memeverse.com/twitter-image.jpg',
   },
