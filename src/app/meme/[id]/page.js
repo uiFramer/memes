@@ -56,7 +56,7 @@ export default function MemePage() {
 
   const handleLike = () => {
     dispatch(toggleLikeMeme(id))
-    toast.success(isLiked ? 'Favorilerden çıkar' : 'Favorilerine ekle')
+    toast.success(isLiked ? 'Beğenilmedi!' : 'Beğenildi!')
   }
 
   const handleShare = async () => {
