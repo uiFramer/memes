@@ -49,7 +49,7 @@ export default function Upload() {
       // Simulated API call
       await new Promise(resolve => setTimeout(resolve, 1000))
       const captions = [
-       "Birden karşıma sen çıkınca ben: '😳'"
+       "Birden karşıma sen çıkınca ben: '😳'", ""
       ]
       setCaption(captions[Math.floor(Math.random() * captions.length)])
     } finally {
@@ -105,7 +105,7 @@ export default function Upload() {
           Resim yükle!
         </h1>
         <p className="text-gray-600 dark:text-gray-300 text-center">
-          Bu platforma kendi miminizi paylaşarak iz bırakın!
+          Bu platforma kendi miminizi paylaşarak iz bırakın.
         </p>
       </motion.div>
 
@@ -134,7 +134,7 @@ export default function Upload() {
                 }}
                 className="text-red-500 hover:text-red-600 text-sm"
               >
-                Resmi Kaldır
+                Resmi kaldır
               </button>
             </div>
           ) : (
