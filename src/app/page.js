@@ -38,11 +38,10 @@ export default function Home() {
         className="text-center"
       >
         <h1 className="text-4xl font-bold mb-4 dark:text-white">
-          Welcome to MemeVerse
+          Türk Meme Topluluğu
         </h1>
         <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Your one-stop destination for the best memes on the internet. Browse, create, and share
-          memes with our amazing community!
+          İnternetteki en iyi mimler için tek adresiniz. Harika topluluğumuzla mimlere bir göz atın, oluşturun ve paylaşın!
         </p>
       </motion.div>
 
