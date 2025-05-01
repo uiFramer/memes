@@ -103,7 +103,7 @@ export default function MemePage() {
     const newComment = {
       id: Date.now(),
       text: comment,
-      author: (author),
+      author: Anonymous,
       timestamp: new Date().toISOString(),
     }
 
