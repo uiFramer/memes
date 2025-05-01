@@ -39,7 +39,7 @@ export default function MemePage() {
       if (!foundMeme) {
         foundMeme = {
           id,
-          name: 'Meme not found',
+          name: 'Meme bulunamadı',
           url: 'https://images.unsplash.com/photo-1594322436404-5a0526db4d13?q=80&w=1000&auto=format&fit=crop',
           width: 500,
           height: 500,
@@ -56,26 +56,26 @@ export default function MemePage() {
 
   const handleLike = () => {
     dispatch(toggleLikeMeme(id))
-    toast.success(isLiked ? 'Removed from favorites' : 'Added to favorites')
+    toast.success(isLiked ? 'Favorilerden çıkar' : 'Favorilerine ekle')
   }
 
   const handleShare = async () => {
     try {
       await navigator.share({
         title: meme?.name,
-        text: 'Check out this awesome meme!',
+        text: 'Bu harika memeye göz atın!',
         url: window.location.href,
       })
     } catch (error) {
       // Fallback to copying URL
       navigator.clipboard.writeText(window.location.href)
-      toast.success('Link copied to clipboard!')
+      toast.success('Link kopyalandı!')
     }
   }
 
   const handleDownload = async () => {
     if (!meme?.url) {
-      toast.error('Image not available')
+      toast.error('Resim mevcut değil!')
       return
     }
 
@@ -90,9 +90,9 @@ export default function MemePage() {
       a.click()
       window.URL.revokeObjectURL(url)
       document.body.removeChild(a)
-      toast.success('Meme downloaded successfully!')
+      toast.success('Meme başarıyla yüklendi!')
     } catch (error) {
-      toast.error('Failed to download meme')
+      toast.error('Meme yüklenemedi')
     }
   }
 
@@ -103,7 +103,7 @@ export default function MemePage() {
     const newComment = {
       id: Date.now(),
       text: comment,
-      author: 'Anonymous User',
+      author: 'Anonim',
       timestamp: new Date().toISOString(),
     }
 
@@ -111,7 +111,7 @@ export default function MemePage() {
     setComments(updatedComments)
     localStorage.setItem(`meme-${id}-comments`, JSON.stringify(updatedComments))
     setComment('')
-    toast.success('Comment added!')
+    toast.success('Yorum eklendi!')
   }
 
   if (!meme) {
@@ -140,7 +140,7 @@ export default function MemePage() {
             className="w-full h-auto object-contain max-h-[600px]"
             onError={(e) => {
               e.target.src = 'https://images.unsplash.com/photo-1594322436404-5a0526db4d13?q=80&w=1000&auto=format&fit=crop'
-              toast.error('Failed to load image')
+              toast.error('Resim yüklenemedi')
             }}
           />
         </div>
@@ -161,7 +161,7 @@ export default function MemePage() {
                   size={20}
                   className={isLiked ? 'fill-current' : ''}
                 />
-                <span>{isLiked ? 'Liked' : 'Like'}</span>
+                <span>{isLiked ? 'Beğendim' : 'Beğen'}</span>
               </motion.button>
 
               <motion.button
@@ -170,7 +170,7 @@ export default function MemePage() {
                 className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors hover:bg-gray-200 dark:hover:bg-gray-600"
               >
                 <Share2 size={20} />
-                <span>Share</span>
+                <span>Paylaş</span>
               </motion.button>
 
               <motion.button
@@ -179,20 +179,20 @@ export default function MemePage() {
                 className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors hover:bg-gray-200 dark:hover:bg-gray-600"
               >
                 <Download size={20} />
-                <span>Download</span>
+                <span>İndir</span>
               </motion.button>
             </div>
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-xl font-semibold dark:text-white">Comments</h2>
+            <h2 className="text-xl font-semibold dark:text-white">Yorumlar</h2>
             
             <form onSubmit={handleComment} className="flex gap-2">
               <input
                 type="text"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
-                placeholder="Add a comment..."
+                placeholder="Yorum yap..."
                 className="flex-1 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary"
               />
               <button
@@ -200,7 +200,7 @@ export default function MemePage() {
                 className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors"
               >
                 <Send size={20} />
-                <span>Send</span>
+                <span>Yolla</span>
               </button>
             </form>
 
