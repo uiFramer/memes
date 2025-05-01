@@ -22,10 +22,10 @@ export default function Navbar() {
 
   const navItems = [
     { href: '/', icon: Home, label: 'Ev' },
-    { href: '/kesfet', icon: Search, label: 'Keşfet' },
-    { href: '/yukle', icon: Upload, label: 'Yükle' },
-    { href: '/liderlik', icon: Trophy, label: 'Lider Tablosu' },
-    { href: '/profil', icon: User, label: 'Profil' },
+    { href: '/explorer', icon: Search, label: 'Keşfet' },
+    { href: '/upload', icon: Upload, label: 'Yükle' },
+    { href: '/leaderboard', icon: Trophy, label: 'Lider Tablosu' },
+    { href: '/profile', icon: User, label: 'Profil' },
   ]
 
   return (
