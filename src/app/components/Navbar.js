@@ -24,7 +24,6 @@ export default function Navbar() {
     { href: '/', icon: Home, label: 'Ev' },
     { href: '/explorer', icon: Search, label: 'Keşfet' },
     { href: '/upload', icon: Upload, label: 'Yükle' },
-    { href: '/leaderboard', icon: Trophy, label: 'Lider Tablosu' },
     { href: '/profile', icon: User, label: 'Profil' },
   ]
 
