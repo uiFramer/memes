@@ -161,7 +161,6 @@ export default function MemePage() {
                   size={20}
                   className={isLiked ? 'fill-current' : ''}
                 />
-                <span>{isLiked ? 'Beğendim' : 'Beğen'}</span>
               </motion.button>
 
               <motion.button
@@ -170,7 +169,6 @@ export default function MemePage() {
                 className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors hover:bg-gray-200 dark:hover:bg-gray-600"
               >
                 <Share2 size={20} />
-                <span>Paylaş</span>
               </motion.button>
 
               <motion.button
@@ -179,7 +177,6 @@ export default function MemePage() {
                 className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors hover:bg-gray-200 dark:hover:bg-gray-600"
               >
                 <Download size={20} />
-                <span>İndir</span>
               </motion.button>
             </div>
           </div>
@@ -200,7 +197,6 @@ export default function MemePage() {
                 className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors"
               >
                 <Send size={20} />
-                <span>Yolla</span>
               </button>
             </form>
 
