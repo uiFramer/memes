@@ -28,10 +28,10 @@ export default function Leaderboard() {
       >
         <h1 className="text-3xl font-bold dark:text-white flex items-center justify-center gap-2">
           <Trophy className="text-yellow-500" size={32} />
-          Meme Leaderboard
+          Lider Tablosu
         </h1>
         <p className="text-gray-600 dark:text-gray-300">
-          Top 10 most engaging memes of all time
+          Tüm zamanların en ilgi çekici 10 mimi.
         </p>
       </motion.div>
 
@@ -66,15 +66,15 @@ export default function Leaderboard() {
                   <div className="flex items-center gap-3 sm:gap-6 mt-2 text-sm text-gray-500 dark:text-gray-400">
                     <div className="flex items-center gap-1">
                       <ThumbsUp size={16} />
-                      <span>{meme.likes}</span>
+                      <span></span>
                     </div>
                     <div className="flex items-center gap-1">
                       <MessageCircle size={16} />
-                      <span>{meme.comments}</span>
+                      <span></span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Share2 size={16} />
-                      <span>{meme.shares}</span>
+                      <span></span>
                     </div>
                   </div>
                 </div>
