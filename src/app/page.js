@@ -32,18 +32,13 @@ export default function Home() {
 
   return (
     <div className="space-y-8">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center"
-      >
-        <h1 className="text-4xl font-bold mb-4 dark:text-white">
-          Turkish Meme Community
-        </h1>
-        <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          İnternetteki en iyi mimler için tek adresiniz. Harika topluluğumuzla mimlere bir göz atın, oluşturun ve paylaşın!
-        </p>
-      </motion.div>
+      
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {memes.slice(0, 100).map((meme) => (
+          <MemeCard key={meme.id} meme={meme} />
+        ))}
+      </div>
           
     </div>
   )
