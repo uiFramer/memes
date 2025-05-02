@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 export const fetchMemes = createAsyncThunk('memes/fetchMemes', async () => {
-  const response = await axios.get('savedState.userMemes')
+  const response = await axios.get('https://api.imgflip.com/caption_image')
   return response.data.data.memes
 })
 
