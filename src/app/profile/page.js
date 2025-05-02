@@ -44,8 +44,8 @@ export default function Profile() {
   }
 
   const tabs = [
-    { id: 'uploads', label: 'Yüklenenler' },
-    { id: 'liked', label: 'Beğenilenler' },
+    { id: 'uploads', label: 'Uploads' },
+    { id: 'liked', label: 'Liked' },
   ]
 
   return (
@@ -104,7 +104,7 @@ export default function Profile() {
             className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors"
           >
             {isEditing ? <Save size={20} /> : <Pencil size={20} />}
-            <span>{isEditing ? 'Kaydet' : 'Düzenle'}</span>
+            <span>{isEditing ? 'Save' : 'Edit Profile'}</span>
           </button>
         </div>
 
