@@ -184,7 +184,7 @@ export default function Upload() {
             className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors disabled:opacity-75"
           >
             <UploadIcon size={20} />
-            <span>{isUploading ? 'Uploading...' : 'Yükle'}</span>
+            <span>{isUploading ? 'Uploading...' : 'Upload'}</span>
           </button>
         </div>
       </div>
