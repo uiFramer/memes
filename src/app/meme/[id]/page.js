@@ -39,7 +39,7 @@ export default function MemePage() {
       if (!foundMeme) {
         foundMeme = {
           id,
-          name: 'Meme bulunamadı',
+          name: 'Meme not found.',
           url: 'https://images.unsplash.com/photo-1594322436404-5a0526db4d13?q=80&w=1000&auto=format&fit=crop',
           width: 500,
           height: 500,
@@ -56,26 +56,26 @@ export default function MemePage() {
 
   const handleLike = () => {
     dispatch(toggleLikeMeme(id))
-    toast.success(isLiked ? 'Beğenilmedi!' : 'Beğenildi!')
+    toast.success(isLiked ? 'Unliked!' : 'Liked!')
   }
 
   const handleShare = async () => {
     try {
       await navigator.share({
         title: meme?.name,
-        text: 'Bu harika memeye göz atın!',
+        text: 'This meme awesome!',
         url: window.location.href,
       })
     } catch (error) {
       // Fallback to copying URL
       navigator.clipboard.writeText(window.location.href)
-      toast.success('Link kopyalandı!')
+      toast.success('Link copied!')
     }
   }
 
   const handleDownload = async () => {
     if (!meme?.url) {
-      toast.error('Resim mevcut değil!')
+      toast.error('Image not available!')
       return
     }
 
@@ -90,9 +90,9 @@ export default function MemePage() {
       a.click()
       window.URL.revokeObjectURL(url)
       document.body.removeChild(a)
-      toast.success('Meme başarıyla yüklendi!')
+      toast.success('Meme was successfully loaded!')
     } catch (error) {
-      toast.error('Meme yüklenemedi')
+      toast.error('Meme failed')
     }
   }
 
@@ -111,7 +111,7 @@ export default function MemePage() {
     setComments(updatedComments)
     localStorage.setItem(`meme-${id}-comments`, JSON.stringify(updatedComments))
     setComment('')
-    toast.success('Yorum eklendi!')
+    toast.success('Comment added!')
   }
 
   if (!meme) {
@@ -140,7 +140,7 @@ export default function MemePage() {
             className="w-full h-auto object-contain max-h-[600px]"
             onError={(e) => {
               e.target.src = 'https://images.unsplash.com/photo-1594322436404-5a0526db4d13?q=80&w=1000&auto=format&fit=crop'
-              toast.error('Resim yüklenemedi')
+              toast.error('Image failed')
             }}
           />
         </div>
@@ -182,14 +182,14 @@ export default function MemePage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-xl font-semibold dark:text-white">Yorumlar</h2>
+            <h2 className="text-xl font-semibold dark:text-white">Comments</h2>
             
             <form onSubmit={handleComment} className="flex gap-2">
               <input
                 type="text"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
-                placeholder="Yorum yap..."
+                placeholder="Write..."
                 className="flex-1 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary"
               />
               <button
