@@ -44,12 +44,7 @@ export default function Home() {
           İnternetteki en iyi mimler için tek adresiniz. Harika topluluğumuzla mimlere bir göz atın, oluşturun ve paylaşın!
         </p>
       </motion.div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {memes.slice(0, 100).map((meme) => (
-          <MemeCard key={meme.id} meme={meme} />
-        ))}
-      </div>
+          
     </div>
   )
 }
