@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 export const fetchMemes = createAsyncThunk('memes/fetchMemes', async () => {
-  const response = await axios.get('https://api.imgflip.com/get_memes')
+  const response = await axios.get('https://memestr.netlify.app')
   return response.data.data.memes
 })
 
