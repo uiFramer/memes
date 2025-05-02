@@ -21,10 +21,10 @@ export default function Navbar() {
   }, [isDarkMode])
 
   const navItems = [
-    { href: '/', icon: Home, label: 'Ev' },
-    { href: '/explorer', icon: Search, label: 'Keşfet' },
-    { href: '/upload', icon: Upload, label: 'Yükle' },
-    { href: '/profile', icon: User, label: 'Profil' },
+    { href: '/', icon: Home, label: 'Home' },
+    { href: '/explorer', icon: Search, label: 'Explore' },
+    { href: '/upload', icon: Upload, label: 'Upload' },
+    { href: '/profile', icon: User, label: 'Profile' },
   ]
 
   return (
@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-primary">M</span>
+            <span className="text-2xl font-bold text-primary">😂</span>
           </Link>
 
           {/* Desktop Navigation */}
