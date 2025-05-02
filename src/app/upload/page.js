@@ -38,7 +38,7 @@ export default function Upload() {
       reader.onload = (e) => setSelectedImage(e.target.result)
       reader.readAsDataURL(file)
     } else {
-      toast.error('Lütfen bir resim dosyası yükleyin (JPG, PNG, GIF)')
+      toast.error('Please upload an image file (JPG, PNG, GIF)')
     }
   }
 
@@ -49,7 +49,7 @@ export default function Upload() {
       // Simulated API call
       await new Promise(resolve => setTimeout(resolve, 1000))
       const captions = [
-       "Birden karşıma sen çıkınca ben: '😳'", ""
+       "Change my mind", "Always has been"
       ]
       setCaption(captions[Math.floor(Math.random() * captions.length)])
     } finally {
@@ -60,7 +60,7 @@ export default function Upload() {
   // Image upload to ImgBB
   const handleUpload = async () => {
     if (!selectedFile) {
-      toast.error('Lütfen bir resim seçin!')
+      toast.error('Please select a image!')
       return
     }
 
@@ -77,22 +77,22 @@ export default function Upload() {
       )
 
       const data = await response.json()
-      if (!data.success) throw new Error('Yükleme başarısız')
+      if (!data.success) throw new Error('Upload failed')
 
       dispatch(addUserMeme({
         id: Date.now().toString(),
-        name: caption || 'Benim mimim!',
+        name: caption || 'My funny meme!',
         url: data.data.url,
         width: data.data.width,
         height: data.data.height,
       }))
 
-      toast.success('Resim başarıyla yüklendi!')
+      toast.success('Image was uploaded successfully!')
       setSelectedImage(null)
       setSelectedFile(null)
       setCaption('')
     } catch (error) {
-      toast.error('Yükleme başarısız: ' + (error.message || 'Tekrar deneyin!'))
+      toast.error('Upload failed: ' + (error.message || 'Try again!'))
     } finally {
       setIsUploading(false)
     }
@@ -102,10 +102,10 @@ export default function Upload() {
     <div className="max-w-2xl mx-auto space-y-8">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
         <h1 className="text-3xl font-bold text-center mb-4 dark:text-white">
-          Resim yükle!
+          Upload
         </h1>
         <p className="text-gray-600 dark:text-gray-300 text-center">
-          Bu platforma kendi miminizi paylaşarak iz bırakın.
+          Leave a mark by sharing your meme here.
         </p>
       </motion.div>
 
@@ -134,7 +134,7 @@ export default function Upload() {
                 }}
                 className="text-red-500 hover:text-red-600 text-sm"
               >
-                Resmi kaldır
+                Remove image
               </button>
             </div>
           ) : (
@@ -142,10 +142,10 @@ export default function Upload() {
               <ImageIcon className="h-12 w-12 mx-auto text-gray-400" />
               <div className="space-y-2">
                 <p className="text-gray-600 dark:text-gray-300">
-                  Resminizi buraya sürükleyin veya seçmek için tıklayın.
+                  Drag your image here or click to select.
                 </p>
                 <p className="text-sm text-gray-500">
-                  Desteklenen format: JPG, PNG, GIF (Max 5MB)
+                  Supported format: JPG, PNG, GIF (Max 5MB)
                 </p>
               </div>
               <input
@@ -164,7 +164,7 @@ export default function Upload() {
             <textarea
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
-              placeholder="Açıklama yaz..."
+              placeholder="Caption here..."
               rows="1"
               className="flex-1 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary resize-none"
             />
