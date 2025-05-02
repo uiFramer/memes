@@ -9,7 +9,7 @@ const loadInitialState = () => {
     return {
       profile: savedProfile ? JSON.parse(savedProfile) : {
         name: 'Anonymous',
-        bio: 'Biyografim',
+        bio: 'Bio',
         avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=default',
       }
     }
@@ -17,7 +17,7 @@ const loadInitialState = () => {
   return {
     profile: {
       name: 'Anonymous',
-      bio: 'Biyografim',
+      bio: 'Bio',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=default',
     }
   }
