@@ -8,16 +8,16 @@ const loadInitialState = () => {
     const savedProfile = localStorage.getItem('userProfile')
     return {
       profile: savedProfile ? JSON.parse(savedProfile) : {
-        name: 'Anonymous User',
-        bio: 'No bio yet',
+        name: 'Anonymous',
+        bio: 'Biyografim',
         avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=default',
       }
     }
   }
   return {
     profile: {
-      name: 'Anonymous User',
-      bio: 'No bio yet',
+      name: 'Anonymous',
+      bio: 'Biyografim',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=default',
     }
   }
