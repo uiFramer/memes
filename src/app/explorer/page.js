@@ -28,25 +28,25 @@ export default function Explorer() {
   }))
 
   const categories = [
-    { value: 'all', label: 'Tümü', icon: Star },
+    { value: 'all', label: 'All', icon: Star },
     { value: 'trends', label: 'Trends', icon: Flame },
-    { value: 'new', label: 'Yeniler', icon: Clock },
-    { value: 'popular', label: 'Popüler', icon: TrendingUp },
+    { value: 'new', label: 'New', icon: Clock },
+    { value: 'popular', label: 'Popular', icon: TrendingUp },
   ]
 
   const timeFilters = [
-    { value: 'all', label: 'Tüm Zamanlar' },
-    { value: 'today', label: 'Bugün' },
-    { value: 'week', label: 'Bu Hafta' },
-    { value: 'month', label: 'Bu Ay' },
+    { value: 'all', label: 'All Times' },
+    { value: 'today', label: 'Today' },
+    { value: 'week', label: 'This Week' },
+    { value: 'month', label: 'This Month' },
   ]
 
   const sortOptions = [
-    { value: 'trending', label: 'Önce Trendler' },
-    { value: 'newest', label: 'En Yeniler' },
-    { value: 'oldest', label: 'En Eskiler' },
-    { value: 'mostLiked', label: 'En Çok Sevilenler' },
-    { value: 'mostViewed', label: 'En Çok Görüntülenenler' },
+    { value: 'trending', label: 'Trending First' },
+    { value: 'newest', label: 'Newest' },
+    { value: 'oldest', label: 'Oldest' },
+    { value: 'mostLiked', label: 'Most Liked' },
+    { value: 'mostViewed', label: 'Most Viewed' },
   ]
 
   const filterMemesByTime = (memes) => {
@@ -107,7 +107,7 @@ export default function Explorer() {
         className="space-y-6"
       >
         <h1 className="text-3xl font-bold text-center dark:text-white">
-          Keşfet
+          Explore
         </h1>
 
         <div className="flex flex-col md:flex-row gap-4">
@@ -115,7 +115,7 @@ export default function Explorer() {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               type="text"
-              placeholder="Bul"
+              placeholder="Search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-primary"
@@ -190,7 +190,7 @@ export default function Explorer() {
         <>
           <div className="flex justify-between items-center">
             <p className="text-gray-600 dark:text-gray-300">
-              {filteredMemes.length} meme bulundu
+              {filteredMemes.length} meme found
             </p>
           </div>
 
@@ -203,7 +203,7 @@ export default function Explorer() {
           {filteredMemes.length === 0 && (
             <div className="text-center py-12">
               <p className="text-gray-600 dark:text-gray-300">
-                Kriterlerinize uyan hiçbir meme bulunamadı.
+                Meme not found.
               </p>
             </div>
           )}
