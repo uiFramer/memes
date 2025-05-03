@@ -32,7 +32,9 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-primary">😂</span>
+            <span className="text-2xl font-bold text-primary">
+            <img src="https://i.hizliresim.com/irt6ev4.png" style="height:30px;width:30px"/>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
