@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <span style="font-size:22px" className="text-2xl font-bold text-primary">MemeCommunity</span>
+            <span className="text-xl font-bold text-primary">MemeCommunity</span>
           </Link>
 
           {/* Desktop Navigation */}
